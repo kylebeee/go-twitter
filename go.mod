@@ -1,11 +1,11 @@
 module github.com/kylebeee/go-twitter
 
-go 1.17
+go 1.18
 
 require (
-	github.com/cenkalti/backoff/v4 v4.1.3
-	github.com/dghubble/sling v1.4.0
-	github.com/stretchr/testify v1.8.1
+	github.com/cenkalti/backoff/v4 v4.2.1
+	github.com/dghubble/sling v1.4.1
+	github.com/stretchr/testify v1.8.4
 )
 
 require (
