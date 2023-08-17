@@ -108,7 +108,7 @@ type StatusService struct {
 // newStatusService returns a new StatusService.
 func newStatusService(sling *sling.Sling) *StatusService {
 	return &StatusService{
-		sling: sling.Path("statuses/"),
+		sling: sling.Path("tweets"),
 	}
 }
 
@@ -186,7 +186,7 @@ func (s *StatusService) Update(status string, params *StatusUpdateParams) (*Twee
 	params.Status = status
 	tweet := new(Tweet)
 	apiError := new(APIError)
-	resp, err := s.sling.New().Post("update.json").BodyForm(params).Receive(tweet, apiError)
+	resp, err := s.sling.New().Post("").BodyForm(params).Receive(tweet, apiError)
 	return tweet, resp, relevantError(err, *apiError)
 }
 
