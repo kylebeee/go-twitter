@@ -186,7 +186,7 @@ func (s *StatusService) Update(status string, params *StatusUpdateParams) (*Twee
 	params.Status = status
 	tweet := new(Tweet)
 	apiError := new(APIError)
-	resp, err := s.sling.New().Post("").BodyForm(params).Receive(tweet, apiError)
+	resp, err := s.sling.New().Post("").BodyJSON(params).Receive(tweet, apiError)
 	return tweet, resp, relevantError(err, *apiError)
 }
 
